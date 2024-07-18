@@ -1,0 +1,729 @@
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('img/fondo_2.png') repeat center fixed;
+    background-size: cover;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para header                                     */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6fff00;
+    z-index: 1001;
+}
+
+.logo img {
+    max-height: 80px;
+    margin: 20px 0 0 30px;
+}
+
+.hamburger {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1002;
+    order: 1;
+    user-select: none;
+}
+
+.hamburger .bar {
+    width: 40px;
+    height: 5px;
+    background-color: #6fff00;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar {
+    position: fixed;
+    top: 20px;
+    right: -800px;
+    width: 200px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.87);
+    transition: right 0.3s ease;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    user-select: none;
+}
+
+.sidebar.active {
+    right: 20px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 25px 0 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    position: relative;
+    color: #3C0B6E;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #6fff00;
+    transition: width 0.3s ease;
+}
+
+.sidebar ul li a:hover:after {
+    width: 100%;
+}
+
+.contact {
+    padding-top: 15px;
+}
+
+.contact p {
+    margin: 10px 0;
+    color: #6fff00;
+}
+
+.contact a {
+    color: #3C0B6E;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para footer                                     */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+
+.footer {
+    background-color: #3C0B6E;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.footer .logo img {
+    height: 50px;
+}
+
+.footer .logo p {
+    font-size: 0.7em;
+}
+
+.footer .info,
+.footer .contact {
+    margin: 10px;
+}
+
+.footer .info p,
+.footer .contact p {
+    margin: 15px;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para index                                      */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+
+.homepage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.homepage-banner img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.homepage-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    height: 900px;
+    padding: 150px;
+}
+
+.homepage-container--reversed {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    position: relative;
+    height: 900px;
+    background-color: #3C0B6E;
+    padding: 150px;
+}
+
+.homepage-container__image-wrapper {
+    position: relative;
+    margin: 100px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.homepage-container__image-wrapper.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.homepage-container__offset {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 5px solid black;
+    z-index: 1;
+    max-width: 500px;
+}
+
+.homepage-container__text {
+    flex: 1;
+    margin: 300px 80px 0;
+    width: 400px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.homepage-container__text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.homepage-container img {
+    display: block;
+    height: 100%;
+    width: 400px;
+    position: relative;
+    z-index: 2;
+}
+
+.homepage-container--reversed img {
+    display: block;
+    height: 100%;
+    width: 400px;
+    position: relative;
+    z-index: 2;
+}
+
+.homepage-container__button {
+    margin-top: 150px;
+    padding: 8px 16px;
+    background-color: #580593;
+    color: white;
+    border: 2px solid #580593;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.homepage-container__button:hover {
+    background-color: #6fff00;
+}
+
+.homepage-container__button--special {
+    margin-top: 150px;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #6fff00;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.homepage-container__button--special:hover {
+    background-color: #6fff00;
+    color: #580593;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para quien soy                                  */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+
+.me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.me-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 50px 150px 0;
+}
+
+.me-container__image-wrapper {
+    position: relative;
+    margin: 100px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.me-container__image-wrapper.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.me-container__offset {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 5px solid black;
+    z-index: 1;
+    max-width: 500px;
+}
+
+.me-container__text {
+    flex: 1;
+    margin: 300px 80px 0;
+    width: 400px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.me-container__text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.me-container img {
+    display: block;
+    height: 100%;
+    width: 350px;
+    position: relative;
+    z-index: 2;
+}
+
+.me-container__textonly {
+    margin: 20px 0;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.me-container__textonly.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.acordeon {
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 50px 20px 100px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.acordeon.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.acordeon-item {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.acordeon-content {
+    display: none;
+    height: 50px;
+}
+
+.acordeon-header {
+    background: lightgreen;
+    height: 50px;
+}
+
+.active .acordeon-content {
+    display: block;
+}
+
+.active .acordeon-header {
+    background: lightcoral;
+    height: 50px;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para Contact                                    */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+.contactContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.contactContainer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.contact {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Centra horizontalmente */
+}
+
+.contact__title {
+    margin: 0;
+    font-size: 2.5em;
+    color: white;
+}
+
+.contact__description {
+    color: white;
+    font-size: 1.2em;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact__input-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.contact__input {
+    width: calc(50% - 5px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact__textarea {
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: none;
+}
+
+.contact__submit {
+    width: 50%;
+    padding: 10px;
+    margin: 20px 0;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact__submit:hover {
+    background-color: #555;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para Galeria                                    */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+
+.collage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.collage.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.collage__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.collage__title--highlight {
+    font-weight: bold;
+    color: #666;
+}
+
+.collage__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    overflow: auto;
+    width: 50%;
+}
+
+.collage__item {
+    position: relative;
+}
+
+.collage__item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.collage__item--1-2-3 {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+}
+
+.collage__item--2-3-1-2-3 {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 3;
+}
+
+.collage__item--3-4-4-5 {
+    grid-column: 3 / span 2;
+    grid-row: 4 / span 2;
+}
+
+.collage__item--4-5-2-3 {
+    grid-column: 4 / span 2;
+    grid-row: 2 / span 2;
+}
+
+.collage__item--6-3 {
+    grid-column: 6;
+    grid-row: 3;
+}
+
+.collage__item--4-4 {
+    grid-column: 4;
+    grid-row: 1;
+    background-color: aqua;
+}
+
+.collage__item--2-4 {
+    grid-column: 2;
+    grid-row: 4;
+    background-color: aqua;
+}
+
+.collage__item--6-2 {
+    grid-column: 6;
+    grid-row: 2;
+    background-color: aqua;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para Slideshow                                  */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+
+.outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.outerContainer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.containerSlider {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    overflow: hidden;
+
+}
+
+.sliderTextbox {
+    flex: 1;
+    padding: 20px;
+    margin: 100px 0px 0px 50px;
+}
+
+.sliderBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Slider {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.Slider-images {
+    display: flex;
+    width: 400px;
+    height: 600px;
+    transition: transform 0.5s ease;
+}
+
+.Slider-images img {
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 600px;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btnPrev {
+    left: 10px;
+}
+
+.btnNext {
+    right: 10px;
+}
+
+.Slider-contador {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: blueviolet;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* ------------------------------------------------------------------------------ */
+/*                                                                                */
+/*                        Estilos para Video                                      */
+/*                                                                                */
+/* ------------------------------------------------------------------------------ */
+
+
+.containerVideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 80px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.containerVideo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.containervideoText {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 800px;
+}
+
+.videoTextbox {
+    padding: 20px;
+}
+
+.videoBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>División de Caja</title>
+    <link rel="stylesheet" type="text/css" href="apariencia.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="img\logo_main_2.png" alt="logo_jago">
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">My Shelf</a></li>
+            <li><a href="#">My Shelf</a></li>
+            <li><a href="#">My Résumé</a></li>
+            <li><a href="#">My Résumé</a></li>
+        </ul>
+        <div class="contact_menu">
+            <p>SAY HELLO</p>
+            <a href="mailto:hello@olaolu.dev">hello@olaolu.dev</a>
+            <a href="https://t.me/mrolaolu">t.me/mrolaolu</a>
+        </div>
+    </nav>
+    <div class="outerContainer">
+        <div class="containerSlider">
+            <div class="sliderTextbox">
+                <h1>Bienvenido</h1>
+                <p>Este es un ejemplo de un contenedor que se divide en dos mitades. La mitad izquierda es para el texto y la mitad derecha es para el slider de imágenes.</p>
+            </div>
+            <div class="sliderBox">
+                <div class="Slider">
+                    <div class="Slider-images">
+                        <img src="img/prueba_img.png" alt="ejemplo funkopop 1" class="active">
+                        <img src="img/fondo.png" alt="ejemplo funkopop 2">
+                        <img src="img/prueba_img.png" alt="ejemplo funkopop 3">
+                        <img src="img/fondo.png" alt="ejemplo funkopop 4">
+                        <img src="img/prueba_img.png" alt="ejemplo funkopop 5">
+                        <img src="img/fondo.png" alt="ejemplo funkopop 6">
+                    </div>
+                    <button class="btnPrev">Anterior</button>
+                    <button class="btnNext">Siguiente</button>
+                    <div class="Slider-contador">
+                        <span id="txtActual">1</span> / <span id="txtTotal">6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javascriptslideshow.js"></script>
+</body>
+</html>
